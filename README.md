@@ -18,27 +18,27 @@ react는 소스코드에 처음부터 html을 넣지 않도 html을 제어할 �
 VirtualDOM
 : 소스코드에는 존재하지 않지만 react가 만들어 낸다.
 
-JSX : component에 정보를 보낼 수 있다. react에서는 ㅊomponent를 재사용할 수 있다.
+### 2.1 Reusable Components with JSX + Props
 
-component 에 정보를 보낼 때 : name = "podjook" 처럼 html과 같은 방법으로 정보를 보낸다.
-`<Food name = "podjook">`
-Food component에 name이라는 prop에 podjook이라는 value를 부여한다.
+- JSX : JS 문법의 확장판. 리액트에서 html tag 등이 포함된 element들을 제공하며 Component를 통해 html+js의 정보들을 처리한다.
+- react에서는 component를 재사용할 수 있다.
 
-`<App />` : component
-component : html을 반환하는 함수!!
+- Props : component 에 data를 보낼 때 html과 유사한 방법으로 작성한다. (JSX의 문법)
+  `<Food name = "podjook">`
+  : Food component에 name이라는 prop에 podjook이라는 value를 부여한다.
 
-react application은 한번에 하나의 component만 rendering 할 수 있다.
-따라서 모든 component들은 app component안에 넣어야한다.
+- component : html을 반환하는 함수!!
+  `<App />`
 
-Food component에 podjook라는 을 부여한다.
-react는 prop들을 Component의 인자로 접근할 수 있다.
-prop들은 Component의 인자로 하나의 객체로 묶여 전달된다.
-parent(App()) 가 children(Food)에게 data를 보내기 위해 props를 사용한다.
-구조분해할당으로 props와 같은 이름을 바로 인자들로 할당하여 접근할 수 있다.
-`{fav}` <- prop.fav
-`{fav}` 와 같이 templete literal처럼 사용할 수 있다.
+- prop들은 Component의 인자로 하나의 객체로 묶여 전달된다.
+  parent(App()) 가 children(Food)에게 data를 보내기 위해 props를 사용한다
+  구조분해할당으로 props와 같은 이름을 바로 인자들로 할당하여 접근할 수 있다.
+  `{fav}` <- prop.fav
+  `{fav}` 와 같이 templete literal처럼 사용할 수 있다.
 
-### 2.3 map Recap
+- react application은 한번에 하나의 component만 rendering 할 수 있다. 따라서 모든 component들은 app component안에 넣어야한다.
+
+### 2.2, 2,3 map Recap
 
 - map을 이용하여 동적으로 데이터를 처리할 수 있다.
   FoodILike와 같은 JSON data 등을 API 등을 통해 가져와
@@ -57,3 +57,17 @@ parent(App()) 가 children(Food)에게 data를 보내기 위해 props를 사용�
   })}
 </div>
 ```
+
+### 2.4 Protection with PropTypes
+
+- prop-types : 부모로부터 전달받은 prop 확인하는 방법
+  전달받은 props가 내가 원하는 props인지를 확인해준다.
+  `npm i prop-types`
+
+- prop-types 로 type뿐만 아니라 어떤 prop들이 빠졌는지 알 수 있다. prop-types doc 참고
+  [https://reactjs.org/docs/typechecking-with-proptypes.html]
+
+- .isRequired
+  propTypes.~~.isRequired는 그것이 있어야 하는 것을 의미하며 `Proptypes.number` 과 같이 쓸경우 type이 number인 것만 확인하고, 제공되지 않는 data(즉 undefined일 경우) warning을 반환한다.
+
+- propTypes 는 'prop-types' module를 사용하기 위해 예약된 method명이다. 다른 method 명(ex sexyTypes)들은 사용할 수 없다.
