@@ -37,3 +37,23 @@ parent(App()) 가 children(Food)에게 data를 보내기 위해 props를 사용�
 구조분해할당으로 props와 같은 이름을 바로 인자들로 할당하여 접근할 수 있다.
 `{fav}` <- prop.fav
 `{fav}` 와 같이 templete literal처럼 사용할 수 있다.
+
+### 2.3 map Recap
+
+- map을 이용하여 동적으로 데이터를 처리할 수 있다.
+  FoodILike와 같은 JSON data 등을 API 등을 통해 가져와
+  새로운 List로 전달하여 동적으로 component들에 데이터를 전달한다.
+
+- create-react-app 등은 Component 를 작성할 때 권장되는 사항들을 가르켜준다.
+  `<img src={picture} alt={name} />`
+  에서 시각장애인분들을 위한 속성인 alt 등을 추가하는 것을 권장한다.
+
+- react는 동적으로 component들을 생성할시 각 component 들을 구분할 수 있는 고윳값 key를 필요로하며 이를 가지지 않을 시 경고문을 console에 띄운다.
+
+```javascript
+<div>
+  {foodILike.map(dish => {
+    return <Food key={dish.id} name={dish.name} picture={dish.image} />;
+  })}
+</div>
+```
