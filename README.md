@@ -1,6 +1,6 @@
 # Movie App.
 
-## ReactJS Fundamental course Project with Nomad academy - React로 웹서비스 만들기
+<h2> ReactJS Fundamental course Project with Nomad academy - React로 웹서비스 만들기<h2>
 
 ### 1 Setup
 
@@ -132,3 +132,8 @@ add = () => {
 
 - Unmounting :<br>
   componentDidUnmount();
+
+#### 3.3 Planning the Movie Component
+
+- Because we want to fetch Movie data with some APIs, before the page is rendered, it should get data.
+- with Life Cycle Component, we get render the basic views and fetch with `componentDidMount`
