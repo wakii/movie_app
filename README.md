@@ -116,3 +116,19 @@ add = () => {
   this.setState(current => ({ count: current.count + 1 }));
 };
 ```
+
+#### 3.2 Component Life Cycle
+
+- life Cycle Method :
+  the methods for react to create components and kill them.
+
+[http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/]
+
+- Mounting :<br>
+  constructor / componentWillMount() -> render() -> componentDIdMount()
+
+- Updating :<br>
+  setState() -> componentWillUpdate() -> render() -> componentDidUpdate()
+
+- Unmounting :<br>
+  componentDidUnmount();
