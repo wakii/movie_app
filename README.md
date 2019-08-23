@@ -23,3 +23,17 @@ JSX : component에 정보를 보낼 수 있다. react에서는 ㅊomponent를 �
 component 에 정보를 보낼 때 : name = "podjook" 처럼 html과 같은 방법으로 정보를 보낸다.
 `<Food name = "podjook">`
 Food component에 name이라는 prop에 podjook이라는 value를 부여한다.
+
+`<App />` : component
+component : html을 반환하는 함수!!
+
+react application은 한번에 하나의 component만 rendering 할 수 있다.
+따라서 모든 component들은 app component안에 넣어야한다.
+
+Food component에 podjook라는 을 부여한다.
+react는 prop들을 Component의 인자로 접근할 수 있다.
+prop들은 Component의 인자로 하나의 객체로 묶여 전달된다.
+parent(App()) 가 children(Food)에게 data를 보내기 위해 props를 사용한다.
+구조분해할당으로 props와 같은 이름을 바로 인자들로 할당하여 접근할 수 있다.
+`{fav}` <- prop.fav
+`{fav}` 와 같이 templete literal처럼 사용할 수 있다.
