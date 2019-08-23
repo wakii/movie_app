@@ -17,3 +17,9 @@ react는 소스코드에 처음부터 html을 넣지 않도 html을 제어할 �
 
 VirtualDOM
 : 소스코드에는 존재하지 않지만 react가 만들어 낸다.
+
+JSX : component에 정보를 보낼 수 있다. react에서는 ㅊomponent를 재사용할 수 있다.
+
+component 에 정보를 보낼 때 : name = "podjook" 처럼 html과 같은 방법으로 정보를 보낸다.
+`<Food name = "podjook">`
+Food component에 name이라는 prop에 podjook이라는 value를 부여한다.
