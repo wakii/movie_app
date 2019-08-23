@@ -98,3 +98,21 @@ function App() {
 - react provides component with its own onClick prop.
   `<button onClick={this.add}>Add</button>`
   if onClick prop has been assigned `this.add()`. it is called immediately.
+
+#### 3.1 All yoyu need to know about State
+
+- state should not be **MUTATED** directly.
+
+- when setState() is called, REACT re-render with new state.
+
+- Whenever the state need to be changed, we should use setState().
+  if state changed directly, react doesn't call render function again.
+  setState() calls render func which refresh its view after changing state.
+
+- the way for state not being dependent of external state
+
+```javascript
+add = () => {
+  this.setState(current => ({ count: current.count + 1 }));
+};
+```
