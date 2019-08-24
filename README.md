@@ -137,3 +137,11 @@ add = () => {
 
 - Because we want to fetch Movie data with some APIs, before the page is rendered, it should get data.
 - with Life Cycle Component, we get render the basic views and fetch with `componentDidMount`
+
+### 4 Making the Movie App
+
+#### 4.0 Fetching Movies from API
+
+- With Axios module, get fetched data from API.
+
+- since it takes a time to get data from API, we call this async way for being done by webAPI during the DOM is rendered in Mounting. And using await, we are waiting for the data get fetched and will show them.
